@@ -51,10 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
     
    function nextSlide() {
   showSlide(currentSlide + 1);
+       updateHeaderDisplay();
 }
 
 function prevSlide() {
   showSlide(currentSlide - 1);
+    updateHeaderDisplay();
 }
 
     const mainContainer = document.getElementById('main-container');
@@ -68,18 +70,8 @@ const header = document.querySelector('header');
     header.style.display = 'flex';
   }
 }
-
-// Example: changing the transform style and updating the header
-function navigate() {
-  // For demonstration, toggle between translateY(-100vh) and translateY(0)
-  if (mainContainer.style.transform === 'translateY(-100vh)') {
-    mainContainer.style.transform = 'translateY(0)';
-  } else {
-    mainContainer.style.transform = 'translateY(-100vh)';
-  }
   
-  updateHeaderDisplay();
-}
+
   
     function highlightAndScrollToFullGalleryImage(index) {
     const galleryItems = document.querySelectorAll("#fullgallery .gallery-item img");
