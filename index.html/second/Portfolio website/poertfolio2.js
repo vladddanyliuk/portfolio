@@ -51,13 +51,13 @@ document.addEventListener("DOMContentLoaded", function () {
     
    function nextSlide() {
   // Hide the header when moving forward
-  document.querySelector('header').style.display = 'none';
+  document.querySelector('header').style.display = 'none !important';
   showSlide(currentSlide + 1);
 }
 
 function prevSlide() {
   // Optionally, show the header when moving backward
-  document.querySelector('header').style.display = 'unset';
+  document.querySelector('header').style.display = 'flex';
   showSlide(currentSlide - 1);
 }
   
