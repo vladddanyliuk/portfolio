@@ -49,20 +49,18 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSliderSize(); // Adjust slider size based on current image
     }
     
-    function nextSlide() {
-    showSlide(currentSlide + 1);
-    }
-    
-    function prevSlide() {
-    showSlide(currentSlide - 1);
-    }
-    if (currentSlide + 1) {
-    // Hide the header if we're moving forward
-    document.querySelector('header').style.display = 'none';
-  } else {
-    // Optionally, you can show the header if going backward
-    document.querySelector('header').style.display = 'unset';
-  }
+   function nextSlide() {
+  // Hide the header when moving forward
+  document.querySelector('header').style.display = 'none';
+  showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+  // Optionally, show the header when moving backward
+  document.querySelector('header').style.display = 'unset';
+  showSlide(currentSlide - 1);
+}
+  
     function highlightAndScrollToFullGalleryImage(index) {
     const galleryItems = document.querySelectorAll("#fullgallery .gallery-item img");
     galleryItems.forEach(img => img.classList.remove("selected"));
