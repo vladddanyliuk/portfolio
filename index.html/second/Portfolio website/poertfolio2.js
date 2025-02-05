@@ -51,12 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
     
    function nextSlide() {
   showSlide(currentSlide + 1);
-       updateHeaderDisplay();
 }
 
 function prevSlide() {
   showSlide(currentSlide - 1);
-    updateHeaderDisplay();
 }
 
     const mainContainer = document.getElementById('main-container');
@@ -209,4 +207,5 @@ function prevSlide() {
         modal.style.display = 'none';
       }
     });
-    
+        updateHeaderDisplay();
+
