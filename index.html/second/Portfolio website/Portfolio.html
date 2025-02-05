@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Artist Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+  <div class="logo">
+    <a href="/">Welcome!</a>
+  </div>
+  <nav>
+    <a href="#" id="contactLink">Contacts</a>
+    <a href="/arts-station">Art Station</a>
+    <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Inst</a>
+  </nav>
+</header>
+<body>
+  <form id="contactForm" method="post" action="sendmail.php">
+    <h2>Contact Us</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+  
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  
+    <button type="submit">Send</button>
+  </form>
+  <div id="main-container">
+   
+    <!-- Screen 1: About Me -->
+    <section class="screen" id="about-me">
+      
+        <h1 id="namemain">NAME</h1>
+      <div class="content">
+        <img src="user.png" alt="My Photo" class="photo">
+      <div class="content2">
+        <h1>About Me</h1>
+        <p>Hi, I'm [Your Name], a digital artist specializing in portraits, illustrations, and custom art. Welcome to my portfolio!Hi, I'm [Your Name], a digital artist specializing in portraits, illustrations, and custom art. Welcome to my portfolio!</p>
+        </div>
+      
+        </div>
+    </section>
+
+    <!-- Screen 2: Categories -->
+    <section class="screen" id="categories">
+      <h2 id="calltoslider">ILLUSTRATIONS</h2>
+      <div id="calltoaction" class="content">
+
+        <section id="gallery">
+          
+          <div class="slider">
+            <div class="slides">
+              <!-- <img src="art1.jpg" alt="Art 1">
+              <img src="art2.png" alt="Art 2">
+              <img src="art3.jpg" alt="Art 3"> -->
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+          </div>
+        </section>
+      
+        <!-- <section id="contact">
+          <h2>Contact</h2>
+          <p>Feel free to reach out via email at <a href="mailto:youremail@example.com">youremail@example.com</a>.</p>
+        </section> -->
+        <div class="scrollable" id="fullgallery">
+          <!-- Gallery items will be dynamically added here -->
+        </div>
+        
+        <!-- Modal for viewing full-sized artwork -->
+        <div id="artworkModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="modalImage">
+          <div id="caption"></div>
+        </div>
+        <!-- <footer>
+          <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </footer> -->
+      
+       
+        <!-- <h1>Art Categories</h1>
+        
+        <div class="categories">
+        <a href="illustrations.html">
+          <div class="category1"><h2>Portraits</h2></div>
+        </a>
+          <a href="illustrations.html">
+            <div class="category2"><h2>Illustrations</h2></div>
+          </a>
+        <a href="illustrations.html">
+
+          <div class="category3"><h2>Orders from Clients</h2></div>
+          </a>
+        </div> -->
+      </div>
+    </section>
+  </div>
+
+  Toggle Navigation
+  <div id="toggle-nav">
+    <button class="toggle-btn" data-target="about-me"></button>
+    
+    <button class="toggle-btn" data-target="categories"></button>
+  </div>
+
+  <script src="poertfolio2.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+</html>
