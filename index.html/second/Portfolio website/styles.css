@@ -12,7 +12,10 @@ body, html {
 /* ==========================================================================
    LAYOUT & SCREENS
    ========================================================================== */
-
+svg{
+   height: 2vw;
+   width: 2vw
+}
 /* Main container (two screens stacked vertically) */
 #main-container {
   display: flex;
@@ -427,6 +430,10 @@ nav a:hover {
 #calltoaction.visible {
   display: flex;
   animation: fadeIn 0.6s ease-out forwards;
+       background-color: white;
+    padding: 20px 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px lightgray;
 }
 @keyframes fadeIn {
   0% {
@@ -589,7 +596,7 @@ nav a:hover {
     overflow-y: hidden;
   }
   .gallery-item img {
-    width: 30vw;
+    width: 20vw;
     height: fit-content;
     transition: transform 0.3s ease;
   }
