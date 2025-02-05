@@ -149,12 +149,10 @@ function prevSlide() {
     
     // Artworks array
     const artworks = [
-    { src: '12.jpg', caption: 'Portrait 1' },
-    { src: 'https://images.unsplash.com/photo-1735657061792-9a8221a7144b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Portrait 1' },
-    { src: 'https://images.unsplash.com/photo-1737412358025-160a0c22e6c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Portrait 1' },
-    { src: 'https://images.unsplash.com/photo-1738316849598-8cbe1e5ca3f6?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Portrait 1' },
-    { src: 'https://images.unsplash.com/photo-1738432323553-b9471e2239b9?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Client Order 1' },
-    { src: 'https://images.unsplash.com/photo-1736523076173-dd6a33e76c37?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Client Order 1' }
+    { src: 'Ross 6 srgb 2.png', caption: 'Portrait 1' },
+    { src: '1.png', caption: 'Portrait 1' },
+    { src: 'Dragon dtiys 1 srgb crop.png', caption: 'Portrait 1' },
+    { src: 'https://images.unsplash.com/photo-1738432323553-b9471e2239b9?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Client Order 1' }
     // Add more artworks as needed
     ];
     const actionBox2  = document.getElementById("calltoslider");
