@@ -157,14 +157,17 @@ function prevSlide() {
 
     actionBox2.addEventListener("click", function() {
   const actionBox = document.getElementById("calltoaction");
-        updateHeaderDisplay();
+        
   // Toggle display between flex and none
   if (actionBox.style.display === "flex") {
     actionBox.style.display = "none";
     actionBox.classList.remove("visible"); // Remove the visible class when hiding
+      updateHeaderDisplay();
+    
   } else {
     actionBox.classList.add("visible"); // Add the visible class when showing
     actionBox2.style.display = "none"; // Hide actionBox2
+      updateHeaderDisplay();
   }
 });
 
