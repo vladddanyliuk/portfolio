@@ -60,7 +60,7 @@ function prevSlide() {
 }
 
     const mainContainer = document.getElementById('main-container');
-    const mainContainer = document.getElementById('header');
+    const header = document.getElementById('header');
     
     function updateHeaderDisplay() {
   // Check if the transform is exactly translateY(-100vh)
