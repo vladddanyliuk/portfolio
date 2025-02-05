@@ -56,7 +56,13 @@ document.addEventListener("DOMContentLoaded", function () {
     function prevSlide() {
     showSlide(currentSlide - 1);
     }
-    
+    if (currentSlide + 1) {
+    // Hide the header if we're moving forward
+    document.querySelector('header').style.display = 'none';
+  } else {
+    // Optionally, you can show the header if going backward
+    document.querySelector('header').style.display = 'unset';
+  }
     function highlightAndScrollToFullGalleryImage(index) {
     const galleryItems = document.querySelectorAll("#fullgallery .gallery-item img");
     galleryItems.forEach(img => img.classList.remove("selected"));
