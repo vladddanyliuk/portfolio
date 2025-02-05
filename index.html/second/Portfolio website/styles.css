@@ -317,7 +317,6 @@ button:active {
 
 /* Customize scrollbar (optional) */
 #fullgallery::-webkit-scrollbar {
-  width: 8px;
 }
 
 #fullgallery::-webkit-scrollbar-thumb {
