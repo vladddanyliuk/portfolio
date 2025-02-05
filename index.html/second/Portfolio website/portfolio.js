@@ -30,31 +30,31 @@
       });
     }
     
-    // Function to navigate to a specific screen
-    function navigateToScreen(index) {
-      currentScreenIndex = index;
-      mainContainer.style.transform = `translateY(-${index * 100}vh)`;
-      updateToggleButtons(index);
-    }
-    
-    // Add click event listeners to all toggle buttons from both sets
-    toggleButtons1.forEach((button, index) => {
-      button.addEventListener('click', () => navigateToScreen(index));
-    });
-    
-    toggleButtons2.forEach((button, index) => {
-      button.addEventListener('click', () => navigateToScreen(index));
-    });
-    
-    // Disable free scrolling and enable controlled scrolling
-    document.body.addEventListener('wheel', (event) => {
-  // If the event target is inside an element that should allow its own scrolling, do nothing.
-  if (event.target.closest('.scrollable')) {
-    return; // Let the event bubble normally in these containers
-  }
+   let touchStartY = 0;
+let touchEndY = 0;
+const swipeThreshold = 30; // Minimum swipe distance to trigger navigation
 
-  event.preventDefault(); // Prevent default scrolling for controlled areas
-  
+function navigateToScreen(index) {
+  currentScreenIndex = index;
+  mainContainer.style.transform = `translateY(-${index * 100}vh)`;
+  updateToggleButtons(index);
+}
+
+// Add click event listeners to toggle buttons
+toggleButtons1.forEach((button, index) => {
+  button.addEventListener('click', () => navigateToScreen(index));
+});
+
+toggleButtons2.forEach((button, index) => {
+  button.addEventListener('click', () => navigateToScreen(index));
+});
+
+// Disable free scrolling and enable controlled scrolling
+document.body.addEventListener('wheel', (event) => {
+  if (event.target.closest('.scrollable')) return; // Allow scrolling inside scrollable areas
+
+  event.preventDefault(); // Prevent default scrolling
+
   if (event.deltaY > 0) {
     if (currentScreenIndex < screens.length - 1) {
       navigateToScreen(currentScreenIndex + 1);
@@ -65,6 +65,30 @@
     }
   }
 }, { passive: false });
+
+// Enable swipe navigation
+document.body.addEventListener('touchstart', (event) => {
+  if (event.target.closest('.scrollable')) return; // Ignore swipe inside scrollable areas
+  touchStartY = event.touches[0].clientY;
+}, { passive: true });
+
+document.body.addEventListener('touchend', (event) => {
+  if (event.target.closest('.scrollable')) return;
+  touchEndY = event.changedTouches[0].clientY;
+  
+  const swipeDistance = touchStartY - touchEndY;
+
+  if (Math.abs(swipeDistance) > swipeThreshold) {
+    if (swipeDistance > 0 && currentScreenIndex < screens.length - 1) {
+      // Swipe up (next screen)
+      navigateToScreen(currentScreenIndex + 1);
+    } else if (swipeDistance < 0 && currentScreenIndex > 0) {
+      // Swipe down (previous screen)
+      navigateToScreen(currentScreenIndex - 1);
+    }
+  }
+}, { passive: true });
+
 
     
     // Select all menu links and sections (if needed for further functionality)
