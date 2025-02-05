@@ -154,10 +154,10 @@ function prevSlide() {
     // Add more artworks as needed
     ];
     const actionBox2  = document.getElementById("calltoslider");
-    
+
     actionBox2.addEventListener("click", function() {
   const actionBox = document.getElementById("calltoaction");
-
+        updateHeaderDisplay();
   // Toggle display between flex and none
   if (actionBox.style.display === "flex") {
     actionBox.style.display = "none";
