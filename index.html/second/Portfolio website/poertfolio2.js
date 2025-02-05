@@ -207,5 +207,5 @@ function prevSlide() {
         modal.style.display = 'none';
       }
     });
-        updateHeaderDisplay();
+        
 
