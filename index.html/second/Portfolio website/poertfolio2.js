@@ -50,15 +50,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
    function nextSlide() {
-  // Hide the header when moving forward
-  document.querySelector('header').style.display = 'none !important';
   showSlide(currentSlide + 1);
 }
 
 function prevSlide() {
-  // Optionally, show the header when moving backward
-  document.querySelector('header').style.display = 'flex';
   showSlide(currentSlide - 1);
+}
+
+    const mainContainer = document.getElementById('main-container');
+const header = document.querySelector('header');
+    
+    function updateHeaderDisplay() {
+  // Check if the transform is exactly translateY(-100vh)
+  if (mainContainer.style.transform.trim() === 'translateY(-100vh)') {
+    header.style.display = 'none';
+  } else {
+    header.style.display = 'flex';
+  }
+}
+
+// Example: changing the transform style and updating the header
+function navigate() {
+  // For demonstration, toggle between translateY(-100vh) and translateY(0)
+  if (mainContainer.style.transform === 'translateY(-100vh)') {
+    mainContainer.style.transform = 'translateY(0)';
+  } else {
+    mainContainer.style.transform = 'translateY(-100vh)';
+  }
+  
+  updateHeaderDisplay();
 }
   
     function highlightAndScrollToFullGalleryImage(index) {
