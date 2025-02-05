@@ -611,6 +611,10 @@ nav a:hover {
     cursor: pointer;
     z-index: 10;
   }
+   svg{
+      height: 10vw;
+      width: 10vw;
+   }
   .slider button.prev:hover,
   .slider button.next:hover {
     transition: none;
