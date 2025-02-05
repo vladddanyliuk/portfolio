@@ -243,6 +243,14 @@ footer {
   max-height: 400px;
   overflow-y: auto;
   width: 200px;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer/Edge */
+}
+
+#fullgallery::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
 }
 
 /* Gallery items */
