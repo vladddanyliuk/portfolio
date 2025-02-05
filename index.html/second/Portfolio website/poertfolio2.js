@@ -93,14 +93,12 @@ function prevSlide() {
     
     if (!currentImg.complete) {
     currentImg.onload = function () {
-            resizeSlider(currentImg);
-
-      resizeSlider();
+    resizeSlider(currentImg);
     };
     } else {
-            resizeSlider(currentImg);
+     resizeSlider(currentImg);
 
-    resizeSlider();
+    
     }
     }
     
