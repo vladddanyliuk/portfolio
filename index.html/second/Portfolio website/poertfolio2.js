@@ -134,9 +134,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Artworks array
     const artworks = [
     { src: '12.jpg', caption: 'Portrait 1' },
-    { src: 'art1.jpg', caption: 'Portrait 1' },
-    { src: 'art1.jpg', caption: 'Portrait 1' },
-    { src: '12.jpg', caption: 'Portrait 1' },
+    { src: 'https://images.unsplash.com/photo-1735657061792-9a8221a7144b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Portrait 1' },
+    { src: 'https://images.unsplash.com/photo-1737412358025-160a0c22e6c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', caption: 'Portrait 1' },
+    { src: 'https://unsplash.com/de/fotos/ein-paar-elefanten-die-auf-einem-gewasser-stehen-62Y56AxzIao', caption: 'Portrait 1' },
     { src: 'art2.png', caption: 'Illustration 1' },
     { src: 'art2.png', caption: 'Illustration 1' },
     { src: 'art3.jpg', caption: 'Client Order 1' },
