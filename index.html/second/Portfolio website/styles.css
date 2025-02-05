@@ -832,15 +832,14 @@ align-items: center;
   /* Header responsiveness */
   
   #fullgallery {
-    flex-direction: row;
-    width: 95vw;
-overflow: hidden;
+            flex-direction: row;
+        width: 99vw;
+        overflow-y: hidden;
 }
 
 .gallery-item img {
-  width: 200px;
-  height: auto;
-  object-fit: cover;
+          width: 30vw;
+        height: fit-content;
   transition: transform 0.3s ease;
   
 }
