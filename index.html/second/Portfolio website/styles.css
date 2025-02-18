@@ -300,6 +300,7 @@
     height: 50%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
   }
   
   /* Modal content box (final version) */
@@ -308,10 +309,13 @@
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 90%;
+    width: fit-content;
+    height: fit-content;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    animation: fadeInModal 0.5s ease-out;
+    max-height: 90vh;
+    max-width: 90vw;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeInModal 0.5sease-out;
   }
   
   /* Close button for modal */
