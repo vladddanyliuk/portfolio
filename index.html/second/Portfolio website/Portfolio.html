@@ -15,6 +15,8 @@
     }
 
     .header {
+      position:fixed;
+      z-index: 1000;
         top: 0;
         left: 0;
         width: 100%;
@@ -146,11 +148,7 @@
                         ? 'active' 
                         : (in_array($current_page, ['mail-templates.php']) ? 'has-active' : '');
         ?>
-        <a href="google.php" class="<?= $googleClass ?>">Google</a>
-        <div class="dropdown-content">
-          <a href="mail-templates.php" class="<?= $current_page == 'mail-templates.php' ? 'active' : '' ?>">Mail Templates</a>
-          <a href="/userscripts/google_autoscreen.user.js">Userscript</a>
-        </div>
+        <a  class="<?= $googleClass ?>">Welcome!</a>
       </div>
       
       <!-- Google Maps Dropdown -->
@@ -161,9 +159,11 @@
                      ? 'active' 
                      : (in_array($current_page, ['places.php']) ? 'has-active' : '');
         ?>
-        <a href="index.php" class="<?= $mapsClass ?>">Google Maps</a>
+        <a href="" class="<?= $mapsClass ?>">Contact</a>
         <div class="dropdown-content">
-          <a href="places.php" class="<?= $current_page == 'places.php' ? 'active' : '' ?>">Places API</a>
+          <a href="https://www.instagram.com/wiaryle/" class="<?= $current_page == '' ? 'active' : '' ?>">Instagram</a>
+          <a href="https://www.artstation.com/wiaryle" class="<?= $current_page == '' ? 'active' : '' ?>">ArtStation</a>
+          <a href="" class="<?= $current_page == '' ? 'active' : '' ?>">Contact Form</a>
         </div>
       </div>
       
@@ -173,9 +173,11 @@
           // For Facebook Events, only one page is defined.
           $fbClass = ($current_page == 'fbevents.php') ? 'active' : '';
         ?>
-        <a href="fbevents.php" class="<?= $fbClass ?>">Facebook Events</a>
+        <a href="" class="<?= $fbClass ?>">Make Order</a>
         <div class="dropdown-content">
-          <a href="/userscripts/fbevents.user.js">Userscript</a>
+          <a href="">Fiverr</a>
+          <a href="">Upwork</a>
+          <a href="">Fiverr</a>
         </div>
       </div>
       
