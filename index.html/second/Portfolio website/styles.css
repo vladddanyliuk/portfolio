@@ -176,8 +176,6 @@
   #namemain {
     font-size: 20em;
     z-index: 2;
-    position: relative;
-     top: -50px;
     color: white;
   }
   
