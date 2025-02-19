@@ -252,8 +252,19 @@
       display: none; /* For Chrome, Safari, and Opera */
   }
   
-  
-  
+  .content1{
+    background: rgb(99 99 99 / 60%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  #content1photo{
+     background-image: url(https://images.unsplash.com/photo-1739660160530-0aec0ad6a5fb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20px;
+  }
   /* Gallery items */
   .gallery-item {
     flex: 1 0 auto;
@@ -493,45 +504,7 @@
       opacity: 1;
     }
   }
-  
-  /* Additional About-me background effect */
-  #about-me .content::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(29, 30, 31, 0.88), rgba(51, 49, 51, 0.93));
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(40px);
-    opacity: 0.9;
-    z-index: -35;
-    animation: pulse2 10s infinite ease-in-out;
-  }
-  @keyframes pulse2 {
-    0% {
-      transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg);
-      opacity: 2;
-    }
-    25% {
-      transform: translate(-50%, -50%) scale(1.2) rotateX(30deg) rotateY(30deg);
-      opacity: 4;
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(0.5) rotateX(20deg) rotateY(30deg);
-      opacity: 1;
-    }
-    75% {
-      transform: translate(-50%, -50%) scale(1.2) rotateX(30deg) rotateY(30deg);
-      opacity: 3;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg);
-      opacity: 1;
-    }
-  }
+
   
   /* ==========================================================================
      MEDIA QUERIES
