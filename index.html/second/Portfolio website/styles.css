@@ -1,628 +1,510 @@
-/* ==========================================================================
-   GENERAL STYLES
-   ========================================================================== */
-   body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* ==========================================================================
-     LAYOUT & SCREENS
-     ========================================================================== */
-  svg{
-     height: 2vw;
-     width: 2vw
-  }
-  /* Main container (two screens stacked vertically) */
-  #main-container {
-    display: flex;
-    flex-direction: column;
-    height: 200%;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  /* Each screen takes up the full viewport height */
-  .screen {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  /* ==========================================================================
-     PAGE SECTIONS & CONTENT
-     ========================================================================== */
-  #content1photo{
-        position: absolute;
-    background-image: url(https://images.unsplash.com/photo-1739660160530-0aec0ad6a5fb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    left: -50px;
-         height: 200px;
-    width: 180px;
-  }
-  /* About Me Section (final version) */
-  #about-me {
-    display: block;
-    background-color: #333;
-    color: black;
-  }
-  
-  /* Categories Section */
-  #categories {
-    background-color: #e5ecec;
-    flex-direction: column;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  /* Content elements */
-  .photo {
-    max-width: 280px;
-  }
-  
-  /* Categories container */
-  .categories {
-    display: flex;
-    gap: 50px;
-    justify-content: space-around;
-    margin-top: 20px;
-  }
-  
-  /* Category cards (common properties) */
-  .category1,
-  .category2,
-  .category3 {
-    cursor: pointer;
-    position: relative;
-    border-radius: 10px;
-    width: 320px;
-    height: 600px;
-    text-align: center;
-    overflow: hidden;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-  }
-  
-  /* Background images for categories */
-  .category1 { background-image: url('art1.jpg'); }
-  .category2 { background-image: url('art2.png'); }
-  .category3 { background-image: url('art3.jpg'); }
-  
-  /* Dark overlay on categories (using ::before) */
-  .category1::before,
-  .category2::before,
-  .category3::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    transition: background-color 0.3s ease;
-    z-index: 1;
-  }
-  
-  /* Hover overlay effect */
-  .category1:hover::before,
-  .category2:hover::before,
-  .category3:hover::before {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Text inside category cards */
-  .category1 h2,
-  .category2 h2,
-  .category3 h2 {
-    position: relative;
-    z-index: 2;
-    color: white;
-    font-size: 18px;
-    margin: 0;
-    line-height: 300px;
-  }
-  
-  /* Toggle Navigation (combined rules) */
-  #toggle-nav {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  /* Toggle button styles */
-  .toggle-btn {
-    width: 1px;
-    height: 12px;
-    background-color: #ccc;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .toggle-btn.active {
-    background-color: #656565;
-  }
-  .toggle-btn:hover {
-    background-color: #aaa;
-  }
-  
-  /* Additional About-me inner content */
-  #about-me .content2 {
-    max-width: 400px;
-    margin: auto;
-    text-align: left;
-    font-weight: bold;
-    color: lightgray;
-  }
-  
-  /* Main title element */
-  #namemain {
-    font-size: 20em;
-    z-index: 2;
-    color: white;
-  }
-  
-  /* Contact section */
-  #contact {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* ==========================================================================
-     SLIDER / GALLERY COMPONENTS
-     ========================================================================== */
-  
-  /* Outer slider container (final version) */
-  .slider {
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
-    transition: width 0.5s, height 0.5s;
-  }
-  
-  /* Slides wrapper */
-  .slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  /* Slider images (final version) */
-  .slides img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-     border-radius: 10px;
-  }
-  
-  /* Slide container (each slide) */
-  .slide {
-    flex-shrink: 0;
-    position: relative;
-  }
-  
-  /* Slider navigation buttons (final version) */
-  .slider button.prev,
-  .slider button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.3);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-  }
-  .slider button.prev { left: 10px; }
-  .slider button.next { right: 10px; }
-  
-  /* Footer */
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  /* Full Gallery */
-  #fullgallery {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 60px 20px;
-    max-width: 80%;
-    margin: auto;
-    max-height: 400px;
-    overflow-y: auto;
-    width: 200px;
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer/Edge */
-  }
-  
-  #fullgallery::-webkit-scrollbar {
-      display: none; /* For Chrome, Safari, and Opera */
-  }
-  
-  .content1{
-    background: rgb(99 99 99 / 60%);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-         padding: 20px;
-    border-radius: 20px;
-  }
-  
-  /* Gallery items */
-  .gallery-item {
-    flex: 1 0 auto;
-    max-height: 200px;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  .selected {
-    opacity: 0.7;
-  }
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  .gallery-item img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Gallery scrollbar (optional) */
-  #fullgallery::-webkit-scrollbar { }
-  #fullgallery::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
-  }
-  #fullgallery::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-  /* ==========================================================================
-     MODAL & CONTACT FORM
-     ========================================================================== */
-  
-  /* Modal background & container (final version) */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 100vh;
-    width: 100%;
-    height: 50%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    align-items: center;
-  }
-  
-  /* Modal content box (final version) */
-  .modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 8px;
-    max-height: 90vh;
-    max-width: 90vw;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    animation: fadeInModal 0.5sease-out;
-  }
-  
-  /* Close button for modal */
-  .modal .close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: #fff;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  .modal .close:hover {
-    color: #ff9800;
-  }
-  
-  /* Caption text */
-  #caption {
-    color: #fff;
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  /* Fade in animation for modal */
-  @keyframes fadeInModal {
-    from {
-      opacity: 0;
-      transform: translateY(-10%);
+ /* ================================
+       GENERAL STYLES & RESET
+    ================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
     }
-  }
-  
-  /* Contact Form styling */
-  #contactForm {
-    display: flex;
-    flex-direction: column;
-  }
-  #contactForm h2 {
-    margin-top: 0;
-  }
-  #contactForm label {
-    margin: 10px 0 5px;
-  }
-  #contactForm input,
-  #contactForm textarea {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: inherit;
-  }
-  #contactForm button {
-    margin-top: 15px;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: black;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  #contactForm button:hover {
-    background-color: black;
-  }
-  
-  /* ==========================================================================
-     HEADER & NAVIGATION
-     ========================================================================== */
-  
-  /* Logo */
-  .logo a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-  }
-  
-  /* Navigation links */
-  nav {
-    display: flex;
-    gap: 1.5rem;
-  }
-  nav a {
-    color: #333;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  nav a:hover {
-    color: #0077ff;
-  }
-  
-  /* ==========================================================================
-     CALL TO ACTION & SLIDER TITLE
-     ========================================================================== */
-  
-  /* Call to action (hidden by default) */
-  #calltoaction {
-    display: none;
-    opacity: 0;
-  }
-  #calltoaction.visible {
-    display: flex;
-    animation: fadeIn 0.6s ease-out forwards;
-         background-color: white;
-      padding: 20px 10px;
+    
+    /* ================================
+       HEADER & NAVIGATION
+    ================================ */
+    .header {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px 0;
+      background: rgba(99, 99, 99, 0.6);
+      color: white;
       border-radius: 20px;
-      box-shadow: 0 0 10px lightgray;
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(100px);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
     }
-    100% {
+    .header.hidden {
+      transform: translate(-50%, -100%);
+    }
+    
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      padding: 18px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .nav-menu a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .nav-menu a.active {
+      background: white;
+      color: #007bff;
+    }
+    .nav-menu a.has-active {
+      background: linear-gradient(to top, #27a9f3, transparent);
+      background-repeat: no-repeat;
+      background-size: 100% 15%;
+      background-position: bottom;
+      transition: background-size 1s ease-out;
+    }
+    .nav-menu a.has-active:hover {
+      background-size: 100% 40%;
+    }
+    
+    /* ================================
+       DROPDOWN MENU
+    ================================ */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      position: absolute;
+      top: 153%;
+      left: 0;
+      background: #007bff;
+      min-width: 160px;
+      z-index: 1001;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      opacity: 0;
+      transform: translateY(-10px);
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    .dropdown-content a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .dropdown:hover .dropdown-content {
       opacity: 1;
       transform: translateY(0);
+      visibility: visible;
     }
-  }
-  
-  /* Main slider title with neon effect */
-  #calltoslider {
-    position: relative;
-    cursor: pointer;
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #ffffff;
-    z-index: 2;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-    text-shadow: 0 0 20px white, 0 0 40px white, 0 0 60px #ff4081, 0 0 80px white;
-  }
-  #calltoslider:hover {
-    text-shadow: 0 0 50px white, 0 0 70px white, 0 0 60px #ffffff, 0 0 120px white;
-  }
-  #calltoslider::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgb(255 64 129 / 88%), rgb(0 188 212 / 93%));
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(40px);
-    opacity: 0.9;
-    z-index: -1;
-    animation: pulse 6s infinite ease-in-out;
-  }
-  @keyframes pulse {
-    0% {
-      transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg);
-      opacity: 2;
-    }
-    25% {
-      transform: translate(-50%, -50%) scale(1.2) rotateX(30deg) rotateY(30deg);
-      opacity: 4;
-    }
-    50% {
-      transform: translate(-44%, -50%) scale(2.5) rotateX(60deg) rotateY(30deg);
-      opacity: 1;
-    }
-    75% {
-      transform: translate(-50%, -44%) scale(1.2) rotateX(30deg) rotateY(30deg);
-      opacity: 3;
-    }
-    100% {
-      transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg);
-      opacity: 1;
-    }
-  }
-
-  
-  /* ==========================================================================
-     MEDIA QUERIES
-     ========================================================================== */
-  @media screen and (max-width: 1100px) {
-    header {
-     
-    }
-    #categories .content {
+    
+    /* ================================
+       MAIN LAYOUT & SCREENS
+    ================================ */
+    #main-container {
+      display: flex;
       flex-direction: column;
-      background: none;
-      box-shadow: none;
+      height: 200%;
+      transition: transform 0.5s ease-in-out;
     }
-    #fullgallery {
-      flex-direction: row;
-      width: 95vw;
-      overflow: auto;
-      max-height: 40vw;
-      padding: 0 0 20px 0;
+    .screen {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      /* Dunkler Overlay-Effekt für alle Screens */
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    /* ================================
+       ABOUT ME SECTION
+    ================================ */
+    #about-me {
+      background: url('Ross 6 srgb 2.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
       align-items: center;
     }
-    .gallery-item img {
-      width: 200px;
-      height: auto;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    #gallery {
-      display: block;
-      width: auto;
-      height: auto;
-      margin: 10px auto;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .screen {
-      height: auto;
-      min-height: 100vh;
-      flex-direction: column;
-    }
-    #about-me .content {
+    #content1photo {
+      position: absolute;
+      left: -50px;
       top: 0;
-      max-width: 100%;
+      height: 200px;
+      width: 180px;
+      border-radius: 10px;
+      background: url('https://images.unsplash.com/photo-1739660160530-0aec0ad6a5fb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+      background-size: cover;
+    }
+    .content1 {
+      background: rgba(99, 99, 99, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       padding: 20px;
+      border-radius: 20px;
     }
-    #categories .content {
+    #namemain {
+      font-size: 4rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      z-index: 2;
+      color: white;
+      text-shadow: 0 0 20px white, 0 0 40px white, 0 0 60px #ff4081, 0 0 80px white;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+    }
+    #namemain:hover {
+      text-shadow: 0 0 50px white, 0 0 70px white, 0 0 60px #fff, 0 0 120px white;
+    }
+    
+    /* ================================
+       CATEGORIES SECTION
+    ================================ */
+    #categories {
+      background-color: #e5ecec;
       flex-direction: column;
-      padding: 50px 20px;
-      background: none;
-      box-shadow: none;
+      background-size: cover;
+      background-position: center;
     }
-    #fullgallery {
-      flex-direction: row;
-      width: 99vw;
-      overflow-y: hidden;
+    .categories {
+      display: flex;
+      gap: 50px;
+      justify-content: space-around;
+      margin-top: 20px;
     }
-    .gallery-item img {
-      width: 20vw;
-      height: fit-content;
+    .category1,
+    .category2,
+    .category3 {
+      cursor: pointer;
+      position: relative;
+      border-radius: 10px;
+      width: 320px;
+      height: 600px;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+      background-size: cover;
+      background-position: center;
       transition: transform 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+    }
+    .category1 { background-image: url('art1.jpg'); }
+    .category2 { background-image: url('art2.png'); }
+    .category3 { background-image: url('art3.jpg'); }
+    .category1::before,
+    .category2::before,
+    .category3::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+      z-index: 1;
+    }
+    .category1:hover::before,
+    .category2:hover::before,
+    .category3:hover::before {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .category1 h2,
+    .category2 h2,
+    .category3 h2 {
+      position: relative;
+      z-index: 2;
+      color: white;
+      font-size: 18px;
+      margin: 0;
+      line-height: 300px;
+    }
+    
+    /* ================================
+       TOGGLE NAVIGATION
+    ================================ */
+    #toggle-nav {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .toggle-btn {
+      width: 1px;
+      height: 12px;
+      background-color: #ccc;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .toggle-btn.active,
+    .toggle-btn:hover {
+      background-color: #656565;
+    }
+    
+    /* ================================
+       SLIDER / GALLERY COMPONENTS
+    ================================ */
+    .slider {
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
+      transition: width 0.5s, height 0.5s;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    .slide {
+      flex-shrink: 0;
+      position: relative;
     }
     .slider button.prev,
     .slider button.next {
+      position: absolute;
       top: 50%;
-      background: none;
-      color: black;
-      text-shadow: 0 0 15px white;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.3);
+      color: white;
       border: none;
       padding: 10px;
       cursor: pointer;
       z-index: 10;
     }
-     svg{
-        height: 10vw;
-        width: 10vw;
-     }
-    .slider button.prev:hover,
-    .slider button.next:hover {
-      transition: none;
-    }
-  }
-
-
-
-  #about-me {
-   
-    background: url('Ross 6 srgb 2.png') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-    /* Overlay for a cool effect */
-    .screen {
+    .slider button.prev { left: 10px; }
+    .slider button.next { right: 10px; }
+    
+    /* ================================
+       MODAL & CONTACT FORM
+    ================================ */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* Dark overlay 🌙 */
-      display: flex;
-      flex-direction: column;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
       justify-content: center;
       align-items: center;
-      text-align: center;
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      border-radius: 8px;
+      max-height: 90vh;
+      max-width: 90vw;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      animation: fadeInModal 0.5s ease-out;
+    }
+    @keyframes fadeInModal {
+      from {
+        opacity: 0;
+        transform: translateY(-10%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .modal .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
       color: #fff;
-      animation: fadeIn 2s ease-in-out;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
     }
-    /* Title styling */
-    #namemain {
-      font-size: 4rem;
-      letter-spacing: 0.1em;
-      margin-bottom: 20px;
+    .modal .close:hover {
+      color: #ff9800;
     }
-    /* Simple fade-in animation */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    
+    #contactForm {
+      display: flex;
+      flex-direction: column;
+    }
+    #contactForm h2 {
+      margin-top: 0;
+    }
+    #contactForm label {
+      margin: 10px 0 5px;
+    }
+    #contactForm input,
+    #contactForm textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+    #contactForm button {
+      margin-top: 15px;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: black;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #contactForm button:hover {
+      background-color: #333;
+    }
+    
+    /* ================================
+       CALL TO ACTION & SLIDER TITLE
+    ================================ */
+    #calltoaction {
+      display: none;
+      opacity: 0;
+    }
+    #calltoaction.visible {
+      display: flex;
+      animation: fadeIn 0.6s ease-out forwards;
+      background-color: white;
+      padding: 20px 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px lightgray;
+    }
+    #calltoslider {
+      position: relative;
+      cursor: pointer;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #fff;
+      z-index: 2;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+      text-shadow: 0 0 20px white, 0 0 40px white, 0 0 60px #ff4081, 0 0 80px white;
+    }
+    #calltoslider::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(255, 64, 129, 0.88), rgba(0, 188, 212, 0.93));
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      filter: blur(40px);
+      opacity: 0.9;
+      z-index: -1;
+      animation: pulse 6s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg);
+        opacity: 2;
+      }
+      25% {
+        transform: translate(-50%, -50%) scale(1.2) rotateX(30deg) rotateY(30deg);
+        opacity: 4;
+      }
+      50% {
+        transform: translate(-44%, -50%) scale(2.5) rotateX(60deg) rotateY(30deg);
+        opacity: 1;
+      }
+      75% {
+        transform: translate(-50%, -44%) scale(1.2) rotateX(30deg) rotateY(30deg);
+        opacity: 3;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1) rotateX(0deg) rotateY(0deg);
+        opacity: 1;
+      }
+    }
+    
+    /* ================================
+       MEDIA QUERIES
+    ================================ */
+    @media screen and (max-width: 1100px) {
+      #categories .content {
+        flex-direction: column;
+        background: none;
+        box-shadow: none;
+      }
+      #fullgallery {
+        flex-direction: row;
+        width: 95vw;
+        overflow: auto;
+        max-height: 40vw;
+        padding: 0 0 20px 0;
+        align-items: center;
+      }
+      .gallery-item img {
+        width: 200px;
+        object-fit: cover;
+      }
+      #gallery {
+        display: block;
+        margin: 10px auto;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .screen {
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      #about-me .content {
+        max-width: 100%;
+        padding: 20px;
+      }
+      #categories .content {
+        flex-direction: column;
+        padding: 50px 20px;
+        background: none;
+        box-shadow: none;
+      }
+      #fullgallery {
+        flex-direction: row;
+        width: 99vw;
+        overflow-y: hidden;
+      }
+      .gallery-item img {
+        width: 20vw;
+      }
+      .slider button.prev,
+      .slider button.next {
+        background: none;
+        color: black;
+        text-shadow: 0 0 15px white;
+      }
+      svg {
+        height: 10vw;
+        width: 10vw;
+      }
     }
