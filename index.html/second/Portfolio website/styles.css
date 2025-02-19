@@ -174,7 +174,6 @@
   
   /* Main title element */
   #namemain {
-     
     font-size: 20em;
     z-index: 2;
     color: white;
@@ -546,13 +545,6 @@
   }
   
   @media screen and (max-width: 768px) {
-     #content1photo{
-    top: 260px;
-        left:unset;
-    height: 240px;
-    width: 180px;
-}
-     }
     .screen {
       height: auto;
       min-height: 100vh;
@@ -598,14 +590,6 @@
     .slider button.next:hover {
       transition: none;
     }
- #namemain {
-       margin-top: 0;
-    
-    }
-.content{
-      padding: 0;    
-        }
-
   }
 
 
@@ -633,7 +617,6 @@
     }
     /* Title styling */
     #namemain {
-       margin-top: 0;
       font-size: 4rem;
       letter-spacing: 0.1em;
       margin-bottom: 20px;
