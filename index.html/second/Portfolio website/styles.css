@@ -37,12 +37,15 @@
      PAGE SECTIONS & CONTENT
      ========================================================================== */
   #content1photo{
-     background-image: url(https://images.unsplash.com/photo-1739660160530-0aec0ad6a5fb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        position: absolute;
+    background-image: url(https://images.unsplash.com/photo-1739660160530-0aec0ad6a5fb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-     height:150px;
-     width:150px;
+    border-radius: 10px;
+    left: -50px;
+         height: 200px;
+    width: 180px;
   }
   /* About Me Section (final version) */
   #about-me {
@@ -264,14 +267,10 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+         padding: 20px;
+    border-radius: 20px;
   }
-  #content1photo{
-     background-image: url(https://images.unsplash.com/photo-1739660160530-0aec0ad6a5fb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 20px;
-  }
+  
   /* Gallery items */
   .gallery-item {
     flex: 1 0 auto;
